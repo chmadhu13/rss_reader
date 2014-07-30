@@ -1,0 +1,19 @@
+<div class='add_feed_block'>
+  <% if flash[:error] %>
+    <div class='flash_error'><%= flash[:error] %></div>
+  <% end %>
+  <% if @feed.present? && @feed.errors.present? %>
+    <% @feed.errors.inspect %>
+  <% end %>
+  <br/>
+  <div class='add_feed_title'>
+    Add Feed Here
+  </div>
+  <br/>
+  
+  <%= form_for @feed do |f| %>
+    RSS Link: <%= f.text_field :site_url %><br />
+    <br />
+    <%= f.submit 'Add Feed'%>
+  <% end %>
+</div>

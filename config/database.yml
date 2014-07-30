@@ -1,0 +1,17 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+  reconnect: true
+  username: root
+  password: 
+  host: 127.0.0.1
+
+development:
+  <<: *default
+  database: rss_reader_development
+  
+test:
+  <<: *default
+  database: rss_reader_test

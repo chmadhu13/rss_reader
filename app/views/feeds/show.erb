@@ -1,0 +1,20 @@
+<div>
+  <% if @feed.blank? %>
+  <div class='no_feed'>Oops! No posts.</div>
+  <% else %>
+    <div>
+      <div class="feed_title float_left"><%= @feed.title %></div>
+      <div class='all_feeds float_right'><%= link_to 'Go to All Feeds', feeds_path %> </div>
+    </div>
+    <br/>
+    <div style="clear: both;"></div>
+    <% @posts.each do |post| %>
+      <div class='single_post'>
+        <div class='post_title'><%= link_to post[:title], post[:link] %></div>
+        <div class='post_desc'><%= post[:description] %> </div><br/>
+        <div class='post_end'></div>
+      </div>
+    <% end %>
+  <% end %>
+  
+</div>

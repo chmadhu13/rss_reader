@@ -1,0 +1,28 @@
+<div>
+  <div class="listed_sites">
+    <% if flash[:success] %>
+      <div class='flash_success'><%= flash[:success] %></div>
+    <% end %>
+    <div class="list_title">All Registered Sites</div><br/>
+    <% if @feeds.blank? %>
+      <div>Oops! There are registered feeds. Please add using below link </div>
+    <% end %>
+    <div class='all_feeds_list'>
+    <% @feeds.each do |feed| %>
+      <div class="single_feed">
+        <div class="padding_px float_left"><%= link_to feed.title, feed_path(feed), :target => "_blank" %></div>
+        <div class="padding_px float_left"><%= link_to 'Edit', edit_feed_path(feed) %></div>
+        <div class="padding_px float_left"><%= link_to 'Delete', feed_path(feed), :method => :delete %></div>
+        <div style="clear: both;"></div>
+      </div>
+    <% end %>
+    </div>
+      <br/><br/>
+    <div class='add_feed_link float_left'><%= link_to 'Add Feed', new_feed_path %></div>
+    
+    <div class='all_posts_link float_right'><%= link_to 'All Posts', all_posts_feeds_path %></div>
+    
+  </div>
+  
+  
+</div>

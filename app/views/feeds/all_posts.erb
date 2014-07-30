@@ -1,0 +1,20 @@
+<div>
+  <div><%= link_to 'Go to All Feeds', feeds_path %></div>
+  <br/>
+</div>
+
+<div class='all_posts_list'>
+  <% @timebased_feeds.keys.sort.reverse.each do |ts| %>
+    <% @timebased_feeds[ts].each do |post| %>
+    <div class='margined_info' >
+      <div class='indv_post_title float_left'><%= link_to post[:title], post[:link], :target => "_blank" %></div>
+      <div class='indv_post_time margin_px float_left'><%= Time.at(ts) %></div>
+      <% feed_info = @indexed_feeds[post[:feed_id]] %>
+    </div>
+    <div style="clear: both;"></div><br/>
+    <div class='indv_post_source '>Source: <%= link_to feed_info.title, feed_info.site_url, :target => "_blank" %></div>
+    <div class='indv_post_desc'><%#= raw post[:description] %></div>
+    
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,2 @@
+Feed.create(:site_url => 'http://images.apple.com/main/rss/hotnews/hotnews.rss', :title => 'Apple Hot News')
+Feed.create(:site_url => 'http://news.yahoo.com/rss/', :title => 'Yahoo News - Latest News & Headlines')
