@@ -1,8 +1,11 @@
 == README
-This application is developed on Ruby 2.1.2 and Rails 4.1.2
+Env =>  Ruby 2.1.2, Rails 4.1.2 and MySql database
 
 Please run 'bundle install' command and then run 'rake db:create db:migrate db:seed' command
 
-This application has features to add/delete/view Feeds and also all posts assocaited to all feeds ordered in descending of published date and time.
+This application has following features 
+1. Interface to add/remove/edit Feed URLS.
+2. List all feeds. Fetch RSS feed titles automatically
+3. A reader page – fetch latest posts from all feeds and combine them together. Sort by date – most recent first and then display. Display title. Clicking on title will open original article page in new tab/window."
 
 Validations got handled in Feeds CRUD operations
